@@ -15,9 +15,17 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'
 " Vim File Explorer
 Plugin 'scrooloose/nerdtree'
+" Vim Status bar
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" Vim Easymotion
+Plugin 'Lokaltog/vim-easymotion'
 
 " Rails
 Plugin 'tpope/vim-rails'
+
+" Golang
+Plugin 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -40,5 +48,13 @@ set nobackup
 
 colorscheme molokai 
 
+"Airline settings
+set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline_theme='molokai'
+
 "NERDTree settings
 nmap <F2> :NERDTreeToggle <CR>
+
+"Easymotion settings
+map <Leader> <Plug>(easymotion-prefix)
