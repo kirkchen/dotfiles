@@ -21,4 +21,7 @@ git submodule update --init
 cd ..
 ln -s .vim/vimrc .vimrc
 
+echo "install vim plugins"
+vim +PluginInstall +qall
+
 echo "kirkchen's vimrc is installed."
