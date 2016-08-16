@@ -16,6 +16,9 @@ Plugin 'flazz/vim-colorschemes'
 " Vim File Explorer
 Plugin 'scrooloose/nerdtree'
 
+" Rails
+Plugin 'tpope/vim-rails'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
