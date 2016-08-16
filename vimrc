@@ -46,6 +46,8 @@ set softtabstop=4
 
 set nobackup
 
+let mapleader = ','
+
 colorscheme molokai 
 
 "Airline settings
@@ -56,5 +58,3 @@ let g:airline_theme='molokai'
 "NERDTree settings
 nmap <F2> :NERDTreeToggle <CR>
 
-"Easymotion settings
-map <Leader> <Plug>(easymotion-prefix)
