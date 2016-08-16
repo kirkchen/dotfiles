@@ -13,6 +13,8 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Vim Color Schema
 Plugin 'flazz/vim-colorschemes'
+" Vim File Explorer
+Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -34,3 +36,6 @@ set softtabstop=4
 set nobackup
 
 colorscheme molokai 
+
+"NERDTree settings
+nmap <F2> :NERDTreeToggle <CR>
