@@ -20,6 +20,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " Vim Easymotion
 Plugin 'Lokaltog/vim-easymotion'
+" Vim Search
+Plugin 'mileszs/ack.vim'
 
 " Rails
 Plugin 'tpope/vim-rails'
@@ -42,9 +44,9 @@ set showmatch
 
 set encoding=utf-8
 
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 
 set nobackup
@@ -60,6 +62,11 @@ colorscheme molokai
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme='molokai'
+
+"Ack settings
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 "NERDTree settings
 nmap <F2> :NERDTreeToggle<CR>
