@@ -42,10 +42,14 @@ set showmatch
 
 set encoding=utf-8
 
+set expandtab
 set tabstop=4
 set softtabstop=4
 
 set nobackup
+set noswapfile
+
+set hlsearch
 
 let mapleader = ','
 
@@ -97,4 +101,17 @@ au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>e <Plug>(go-rename)
+
+" Ruby 
+let g:tagbar_type_ruby = {
+    \ 'ctagstype' : 'Ruby',
+    \ 'kinds'     : [
+        \ 'c:classes',
+        \ 'f:methods',
+        \ 'F:singleton methods',
+        \ 'm:modules',
+        \ 'n:namespaces',
+        \ 't:tasks'
+    \ ]
+	\ }
 
