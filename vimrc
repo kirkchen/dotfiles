@@ -62,7 +62,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='molokai'
 
 "NERDTree settings
-nmap <F2> :NERDTreeToggle <CR>
+nmap <F2> :NERDTreeToggle<CR>
 
 "Tagbar settings
 let g:tagbar_type_go = {
