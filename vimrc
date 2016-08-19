@@ -54,6 +54,8 @@ set noswapfile
 
 set hlsearch
 
+set guitablabel=%t
+
 let mapleader = ','
 
 colorscheme molokai 
