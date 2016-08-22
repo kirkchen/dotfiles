@@ -1,4 +1,4 @@
-"compatible with vi
+" compatible with vi
 set nocompatible
 filetype off                  " required
 
@@ -22,6 +22,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Lokaltog/vim-easymotion'
 " Vim Search
 Plugin 'mileszs/ack.vim'
+" Vim comment
+Plugin 'scrooloose/nerdcommenter'
 
 " Git
 Plugin 'tpope/vim-fugitive'
@@ -38,10 +40,10 @@ Plugin 'majutsushi/tagbar'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-"show line number
+" show line number
 set number
 
-"show syntax highlight
+" show syntax highlight
 syntax on
 
 set showmatch
@@ -64,21 +66,24 @@ let mapleader = ','
 
 colorscheme molokai 
 
-"Airline settings
+" Airline settings
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme='molokai'
 let g:airline#extensions#tabline#enabled = 1
 
-"Ack settings
+" Ack settings
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-"NERDTree settings
+" NERDTree settings
 nmap <F2> :NERDTreeToggle<CR>
 
-"Tagbar settings
+" NERDComment settings
+let g:NERDSpaceDelims=1
+
+" Tagbar settings
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
     \ 'kinds'     : [
