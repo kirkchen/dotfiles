@@ -25,6 +25,7 @@ Plugin 'mileszs/ack.vim'
 
 " Git
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 
 " Rails
 Plugin 'tpope/vim-rails'
