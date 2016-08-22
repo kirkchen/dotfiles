@@ -23,6 +23,9 @@ Plugin 'Lokaltog/vim-easymotion'
 " Vim Search
 Plugin 'mileszs/ack.vim'
 
+" Git
+Plugin 'tpope/vim-fugitive'
+
 " Rails
 Plugin 'tpope/vim-rails'
 
