@@ -68,6 +68,12 @@ let mapleader = ','
 
 colorscheme molokai 
 
+" ,/ turn off search highlighting
+nmap <leader>/ :nohl<CR>
+
+" ,p toggles paste mode
+nmap <leader>p :set paste!<BAR>set paste?<CR>
+
 " Airline settings
 set laststatus=2
 let g:airline_powerline_fonts = 1
