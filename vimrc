@@ -28,6 +28,10 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'terryma/vim-multiple-cursors'
 " Vim code complete 
 Plugin 'Shougo/neocomplete.vim'
+" Vim surround
+Plugin 'tpope/vim-surround'
+" Vim align
+Plugin 'junegunn/vim-easy-align'
 
 " Git
 Plugin 'tpope/vim-fugitive'
@@ -144,6 +148,12 @@ let g:tagbar_type_ruby = {
         \ 't:tasks'
     \ ]
 	\ }
+
+" Vim auto align settings
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " Neo Complete settings
 " Disable AutoComplPop.
