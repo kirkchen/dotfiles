@@ -24,6 +24,8 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'mileszs/ack.vim'
 " Vim comment
 Plugin 'scrooloose/nerdcommenter'
+" Vim multi selector
+Plugin 'terryma/vim-multiple-cursors'
 
 " Git
 Plugin 'tpope/vim-fugitive'
