@@ -36,6 +36,8 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'wakatime/vim-wakatime'
 " Vim autoclose
 Plugin 'Townk/vim-autoclose'
+" Vim SearchFile
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " Git
 Plugin 'tpope/vim-fugitive'
