@@ -32,6 +32,8 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'tpope/vim-surround'
 " Vim align
 Plugin 'junegunn/vim-easy-align'
+" Vim time
+Plugin 'wakatime/vim-wakatime'
 
 " Git
 Plugin 'tpope/vim-fugitive'
