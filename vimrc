@@ -34,6 +34,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'junegunn/vim-easy-align'
 " Vim time
 Plugin 'wakatime/vim-wakatime'
+" Vim autoclose
+Plugin 'Townk/vim-autoclose'
 
 " Git
 Plugin 'tpope/vim-fugitive'
@@ -45,6 +47,9 @@ Plugin 'tpope/vim-rails'
 " Golang
 Plugin 'fatih/vim-go'
 Plugin 'majutsushi/tagbar'
+
+" Puppet
+Plugin 'rodjek/vim-puppet'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -137,6 +142,8 @@ au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>e <Plug>(go-rename)
+
+let g:go_fmt_command = "goimports"
 
 " Ruby 
 let g:tagbar_type_ruby = {
