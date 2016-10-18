@@ -56,6 +56,9 @@ Plugin 'rodjek/vim-puppet'
 " Html
 Plugin 'mattn/emmet-vim'
 
+" Groovy
+Plugin 'vim-scripts/groovy.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -168,6 +171,12 @@ let g:tagbar_type_ruby = {
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" Map capistrano file type
+au BufNewFile,BufRead *.cap set filetype=ruby
+
+" Map jenkins file type
+au BufNewFile,BufRead Jenkinsfile set filetype=groovy
 
 " Neo Complete settings
 " Disable AutoComplPop.
