@@ -24,4 +24,8 @@ ln -s .vim/vimrc .vimrc
 echo "install vim plugins"
 vim +PluginInstall +qall
 
+ln -s .vim/zshrc .zshrc
+ln -s .vim/tmux.conf .tmux.conf
+source .zshrc
+
 echo "kirkchen's vimrc is installed."
