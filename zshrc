@@ -1,7 +1,3 @@
-# Powerline config
-POWERLINE_HIDE_HOST_NAME="true"
-POWERLINE_PATH="short"
-
 # Bullet-train config
 BULLETTRAIN_PROMPT_ORDER=(
   context
@@ -24,7 +20,7 @@ export EDITOR=vim
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/kirkchen/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -110,12 +106,25 @@ source $ZSH/oh-my-zsh.sh
 unalias gb
 alias gbr="git branch"
 alias mux="tmuxinator"
+alias ctags="`brew --prefix`/bin/ctags"
 alias ptt="ssh bbsu@ptt.cc"
 
 # Homebrew file wrap
 if [ -f $(brew --prefix)/etc/brew-wrap ];then
   source $(brew --prefix)/etc/brew-wrap
 fi
+
+# Visual Studio Code
+function code {  
+    if [[ $# = 0 ]]
+    then
+        open -a "Visual Studio Code"
+    else
+        local argPath="$1"
+        [[ $1 = /* ]] && argPath="$1" || argPath="$PWD/${1#./}"
+        open -a "Visual Studio Code" "$argPath"
+    fi
+}
 
 # Rvm
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
