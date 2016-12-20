@@ -26,7 +26,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdcommenter'
 " Vim multi selector
 Plugin 'terryma/vim-multiple-cursors'
-" Vim code complete 
+" Vim code complete
 Plugin 'Shougo/neocomplete.vim'
 " Vim surround
 Plugin 'tpope/vim-surround'
@@ -90,7 +90,15 @@ set guitablabel=%t
 
 let mapleader = ','
 
-colorscheme molokai 
+colorscheme molokai
+
+" Highlight trailing whitespaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
 " ,/ turn off search highlighting
 nmap <leader>/ :nohl<CR>
@@ -156,7 +164,7 @@ au FileType go nmap <Leader>e <Plug>(go-rename)
 
 let g:go_fmt_command = "goimports"
 
-" Ruby 
+" Ruby
 let g:tagbar_type_ruby = {
     \ 'ctagstype' : 'Ruby',
     \ 'kinds'     : [
@@ -256,3 +264,14 @@ endif
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 set backspace=indent,eol,start
+
+" Remove trailing white spaces
+function StripTrailingWhitespace()
+  if !&binary && &filetype != 'diff'
+    normal mz
+    normal Hmy
+    %s/\s\+$//e
+    normal 'yz<CR>
+    normal `z
+  endif
+endfunction
