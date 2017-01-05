@@ -105,6 +105,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 unalias gb
 alias gbr="git branch"
+alias gcoi="git checkout \$(git branch | cut -c 3- | pick)"
+alias gmi="git merge \$(git branch | cut -c 3- | pick)"
+alias gmdb="f() { if [ -z \$1 ]; then echo 'Please assign branch namespace.'; else git branch | awk -F. '/'"\$1"'/{print}' | xargs -I {} git branch -D {}; fi }; f"
 alias mux="tmuxinator"
 alias ctags="`brew --prefix`/bin/ctags"
 alias ptt="ssh bbsu@ptt.cc"
@@ -130,9 +133,17 @@ function code {
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Golang
-# export GOROOT=/usr/local/go
 export GOPATH=$HOME/.go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
+
+# Gradle
+export PATH=$PATH:~/Tools/gradle-2.13/bin
+
+# Java
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_112`
+
+# MySql
+export PATH=$PATH:$(brew --prefix)/Cellar/mysql/5.7.16/bin
 
 # Nvm
 export NVM_DIR="$HOME/.nvm"
