@@ -71,7 +71,7 @@ ZSH_THEME="bullet-train"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git ruby rails golang zsh-autosuggestions extract z alias-tips)
+plugins=(git ruby rails golang zsh-autosuggestions extract z alias-tips docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -111,6 +111,7 @@ alias gmdb="f() { if [ -z \$1 ]; then echo 'Please assign branch namespace.'; el
 alias mux="tmuxinator"
 alias ctags="`brew --prefix`/bin/ctags"
 alias ptt="ssh bbsu@ptt.cc"
+alias ptt2="ssh bbsu@ptt2.cc"
 
 # Homebrew file wrap
 if [ -f $(brew --prefix)/etc/brew-wrap ];then
@@ -144,6 +145,10 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_112`
 
 # MySql
 export PATH=$PATH:$(brew --prefix)/Cellar/mysql/5.7.16/bin
+
+# Protoc 3
+export PATH=$PATH:~/Tools/protoc-3/bin
+
 
 # Nvm
 export NVM_DIR="$HOME/.nvm"
