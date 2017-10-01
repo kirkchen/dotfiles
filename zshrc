@@ -1,3 +1,6 @@
+# General Settings
+enable_azure_cli_helper=false
+
 # Bullet-train config
 BULLETTRAIN_PROMPT_ORDER=(
   context
@@ -152,18 +155,14 @@ export PATH=$PATH:$(brew --prefix)/Cellar/mysql/5.7.16/bin
 # Protoc 3
 export PATH=$PATH:~/Tools/protoc-3/bin
 
-# Azure Cli
-export PATH=$PATH:/Users/kirkchen/bin
-#source '/Users/kirkchen/lib/azure-cli/az.completion'
-
 # Nvm
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/kirkchen/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/kirkchen/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/kirkchen/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/kirkchen/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+# Azure Cli
+if [ "$enable_azure_cli_helper" = true ]; then
+  export PATH=$PATH:/Users/kirkchen/bin
+  source '/Users/kirkchen/lib/azure-cli/az.completion'
+end
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
