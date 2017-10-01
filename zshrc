@@ -1,6 +1,3 @@
-# General Settings
-enable_azure_cli_helper=false
-
 # Bullet-train config
 BULLETTRAIN_PROMPT_ORDER=(
   context
@@ -158,11 +155,5 @@ export PATH=$PATH:~/Tools/protoc-3/bin
 # Nvm
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
-
-# Azure Cli
-if [ "$enable_azure_cli_helper" = true ]; then
-  export PATH=$PATH:/Users/kirkchen/bin
-  source '/Users/kirkchen/lib/azure-cli/az.completion'
-end
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
