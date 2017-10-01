@@ -6,10 +6,12 @@ BULLETTRAIN_PROMPT_ORDER=(
   ruby
   nvm
   go
-  time
+  # time
+  cmd_exec_time
 )
 BULLETTRAIN_NVM_SHOW=true
 BULLETTRAIN_GO_SHOW=true
+BULLETTRAIN_EXEC_TIME_SHOW=true
 BULLETTRAIN_DIR_EXTENDED=2
 BULLETTRAIN_GIT_PROMPT_CMD=\${\$(git_prompt_info)//\\//\ \ }
 
@@ -112,6 +114,7 @@ alias mux="tmuxinator"
 alias ctags="`brew --prefix`/bin/ctags"
 alias ptt="ssh bbsu@ptt.cc"
 alias ptt2="ssh bbsu@ptt2.cc"
+alias e="$EDITOR"
 
 # Homebrew file wrap
 if [ -f $(brew --prefix)/etc/brew-wrap ];then
@@ -149,7 +152,18 @@ export PATH=$PATH:$(brew --prefix)/Cellar/mysql/5.7.16/bin
 # Protoc 3
 export PATH=$PATH:~/Tools/protoc-3/bin
 
+# Azure Cli
+export PATH=$PATH:/Users/kirkchen/bin
+#source '/Users/kirkchen/lib/azure-cli/az.completion'
 
 # Nvm
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/kirkchen/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/kirkchen/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/kirkchen/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/kirkchen/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
