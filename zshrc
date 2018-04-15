@@ -14,12 +14,15 @@ BULLETTRAIN_GO_SHOW=true
 BULLETTRAIN_EXEC_TIME_SHOW=true
 BULLETTRAIN_DIR_EXTENDED=2
 BULLETTRAIN_GIT_PROMPT_CMD=\${\$(git_prompt_info)//\\//\ \ }
+BULLETTRAIN_CONTEXT_HOSTNAME=MacbookPro
 
 # Tmux
 export EDITOR=vim
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$(brew --prefix qt@5.5)/bin":$PATH
+export PATH="/usr/local/opt/go@1.8/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -124,7 +127,7 @@ if [ -f $(brew --prefix)/etc/brew-wrap ];then
 fi
 
 # Visual Studio Code
-function code {  
+function code {
     if [[ $# = 0 ]]
     then
         open -a "Visual Studio Code"
@@ -146,18 +149,6 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # Golang
 export GOPATH=$HOME/.go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
-
-# Gradle
-export PATH=$PATH:~/Tools/gradle-2.13/bin
-
-# Java
-# export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_112`
-
-# MySql
-export PATH=$PATH:$(brew --prefix)/Cellar/mysql/5.7.16/bin
-
-# Protoc 3
-export PATH=$PATH:~/Tools/protoc-3/bin
 
 # Nvm
 export NVM_DIR="$HOME/.nvm"
