@@ -76,7 +76,7 @@ ZSH_THEME="bullet-train"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git ruby rails golang zsh-autosuggestions extract z alias-tips docker-compose)
+plugins=(git ruby rails golang zsh-autosuggestions extract z alias-tips docker-compose kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -155,3 +155,12 @@ export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# added by travis gem
+[ -f /Users/kirkchen/.travis/travis.sh ] && source /Users/kirkchen/.travis/travis.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/kirkchen/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/kirkchen/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/kirkchen/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/kirkchen/google-cloud-sdk/completion.zsh.inc'; fi
