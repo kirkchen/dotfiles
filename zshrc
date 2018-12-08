@@ -5,7 +5,7 @@ BULLETTRAIN_PROMPT_ORDER=(
   git
   ruby
   nvm
-  go
+  # go
   # time
   cmd_exec_time
 )
@@ -21,8 +21,6 @@ export EDITOR=vim
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="$(brew --prefix qt@5.5)/bin":$PATH
-export PATH="/usr/local/opt/go@1.8/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -32,7 +30,7 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="powerline"
-ZSH_THEME="bullet-train"
+ZSH_THEME="bullet-train.zsh/bullet-train"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -138,6 +136,7 @@ alias ptt2="ssh bbsu@ptt2.cc"
 alias e="$EDITOR"
 
 # Homebrew file wrap
+export HOMEBREW_BREWFILE=~/.vim/Brewfile
 if [ -f $(brew --prefix)/etc/brew-wrap ];then
   source $(brew --prefix)/etc/brew-wrap
 fi
@@ -160,11 +159,7 @@ function now {
 }
 
 # Rvm
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-# Golang
-export GOPATH=$HOME/.go
-export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
+# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Nvm
 export NVM_DIR="$HOME/.nvm"
@@ -172,11 +167,4 @@ export NVM_DIR="$HOME/.nvm"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# added by travis gem
-[ -f /Users/kirkchen/.travis/travis.sh ] && source /Users/kirkchen/.travis/travis.sh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/kirkchen/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/kirkchen/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/kirkchen/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/kirkchen/google-cloud-sdk/completion.zsh.inc'; fi
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -29,9 +29,9 @@ Plugin 'terryma/vim-multiple-cursors'
 " Vim surround
 Plugin 'tpope/vim-surround'
 " Vim align
-Plugin 'junegunn/vim-easy-align'
+" Plugin 'junegunn/vim-easy-align'
 " Vim time
-Plugin 'wakatime/vim-wakatime'
+" Plugin 'wakatime/vim-wakatime'
 " Vim autoclose
 Plugin 'Townk/vim-autoclose'
 " Vim SearchFile
@@ -40,27 +40,27 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
 
 " Git
-Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
 " Rails
-Plugin 'tpope/vim-rails'
+" Plugin 'tpope/vim-rails'
 
 " Golang
-Plugin 'fatih/vim-go'
-Plugin 'majutsushi/tagbar'
+" Plugin 'fatih/vim-go'
+" Plugin 'majutsushi/tagbar'
 
 " Puppet
-Plugin 'rodjek/vim-puppet'
+" Plugin 'rodjek/vim-puppet'
 
 " Html
 Plugin 'mattn/emmet-vim'
 
 " Groovy
-Plugin 'vim-scripts/groovy.vim'
+" Plugin 'vim-scripts/groovy.vim'
 
 " Javascript
-Plugin 'kchmck/vim-coffee-script'
+" Plugin 'kchmck/vim-coffee-script'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -124,70 +124,70 @@ nmap <F2> :NERDTreeToggle<CR>
 let g:NERDSpaceDelims=1
 
 " Tagbar settings
-let g:tagbar_type_go = {
-    \ 'ctagstype' : 'go',
-    \ 'kinds'     : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-        \ 'e:embedded',
-        \ 'm:methods',
-        \ 'r:constructor',
-        \ 'f:functions'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 't' : 'ctype',
-        \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-        \ 'ctype' : 't',
-        \ 'ntype' : 'n'
-    \ },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-	\ }
-nmap <F8> :TagbarToggle<CR>
+"let g:tagbar_type_go = {
+"    \ 'ctagstype' : 'go',
+"    \ 'kinds'     : [
+"        \ 'p:package',
+"        \ 'i:imports:1',
+"        \ 'c:constants',
+"        \ 'v:variables',
+"        \ 't:types',
+"        \ 'n:interfaces',
+"        \ 'w:fields',
+"        \ 'e:embedded',
+"        \ 'm:methods',
+"        \ 'r:constructor',
+"        \ 'f:functions'
+"    \ ],
+"    \ 'sro' : '.',
+"    \ 'kind2scope' : {
+"        \ 't' : 'ctype',
+"        \ 'n' : 'ntype'
+"    \ },
+"    \ 'scope2kind' : {
+"        \ 'ctype' : 't',
+"        \ 'ntype' : 'n'
+"    \ },
+"    \ 'ctagsbin'  : 'gotags',
+"    \ 'ctagsargs' : '-sort -silent'
+"	\ }
+"nmap <F8> :TagbarToggle<CR>
 
 " Golang
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>e <Plug>(go-rename)
+"au FileType go nmap <leader>r <Plug>(go-run)
+"au FileType go nmap <leader>b <Plug>(go-build)
+"au FileType go nmap <leader>t <Plug>(go-test)
+"au FileType go nmap <leader>c <Plug>(go-coverage)
+"au FileType go nmap <Leader>gd <Plug>(go-doc)
+"au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+"au FileType go nmap <Leader>e <Plug>(go-rename)
 
-let g:go_fmt_command = "goimports"
+"let g:go_fmt_command = "goimports"
 
 " Ruby
-let g:tagbar_type_ruby = {
-    \ 'ctagstype' : 'Ruby',
-    \ 'kinds'     : [
-        \ 'c:classes',
-        \ 'f:methods',
-        \ 'F:singleton methods',
-        \ 'm:modules',
-        \ 'n:namespaces',
-        \ 't:tasks'
-    \ ]
-	\ }
+"let g:tagbar_type_ruby = {
+"    \ 'ctagstype' : 'Ruby',
+"    \ 'kinds'     : [
+"        \ 'c:classes',
+"        \ 'f:methods',
+"        \ 'F:singleton methods',
+"        \ 'm:modules',
+"        \ 'n:namespaces',
+"        \ 't:tasks'
+"    \ ]
+"	\ }
 
 " Vim auto align settings
 " Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
+"xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+"nmap ga <Plug>(EasyAlign)
 
 " Map capistrano file type
-au BufNewFile,BufRead *.cap set filetype=ruby
+"au BufNewFile,BufRead *.cap set filetype=ruby
 
 " Map jenkins file type
-au BufNewFile,BufRead Jenkinsfile set filetype=groovy
+"au BufNewFile,BufRead Jenkinsfile set filetype=groovy
 
 " Remove trailing white spaces
 function StripTrailingWhitespace()
