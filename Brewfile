@@ -7,6 +7,7 @@ brew bat
 brew cmake
 brew hub
 brew icu4c
+brew libevent
 brew mas
 brew mysql
 brew ncurses
@@ -22,6 +23,7 @@ brew readline
 brew ruby-build
 brew the_silver_searcher
 brew tig
+brew tmux
 brew xz
 brew yarn
 brew zsh
