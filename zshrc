@@ -115,6 +115,7 @@ alias gpsu="git push --set-upstream origin \$(git rev-parse --abbrev-ref HEAD)"
 alias gcoi="git checkout \$(git branch | cut -c 3- | pick)"
 alias gmi="git merge \$(git branch | cut -c 3- | pick)"
 alias gmdb="f() { if [ -z \$1 ]; then echo 'Please assign branch namespace.'; else git branch | awk -F. '/'"\$1"'/{print}' | xargs -I {} git branch -D {}; fi }; f"
+alias gdt="git difftool"
 alias ,,="cd \$(git rev-parse --show-toplevel)"
 
 # Tools
@@ -158,8 +159,9 @@ function now {
   echo $(date -u '+%Y%m%d%H%M%S')
 }
 
-# Rvm
-# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# Rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 # Nvm
 export NVM_DIR="$HOME/.nvm"

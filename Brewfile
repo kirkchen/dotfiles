@@ -2,15 +2,24 @@
 # tap repositories and their packages
 
 tap homebrew/core
+brew autoconf
 brew bat
 brew cmake
+brew hub
 brew icu4c
 brew mas
+brew mysql
 brew ncurses
 brew node
 brew nvm
+brew openssl
 brew pcre
+brew pick
+brew pkg-config
+brew rbenv
+brew rbenv-gemset
 brew readline
+brew ruby-build
 brew the_silver_searcher
 brew tig
 brew xz
