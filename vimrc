@@ -40,7 +40,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
 
 " Git
-" Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
 " Rails
@@ -57,7 +57,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'mattn/emmet-vim'
 
 " Groovy
-" Plugin 'vim-scripts/groovy.vim'
+Plugin 'vim-scripts/groovy.vim'
 
 " Javascript
 " Plugin 'kchmck/vim-coffee-script'
@@ -187,7 +187,8 @@ let g:NERDSpaceDelims=1
 "au BufNewFile,BufRead *.cap set filetype=ruby
 
 " Map jenkins file type
-"au BufNewFile,BufRead Jenkinsfile set filetype=groovy
+au BufNewFile,BufRead Jenkinsfile set filetype=groovy
+au BufNewFile,BufRead JenkinsfileDeploy set filetype=groovy
 
 " Remove trailing white spaces
 function StripTrailingWhitespace()

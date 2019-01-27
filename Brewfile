@@ -2,28 +2,66 @@
 # tap repositories and their packages
 
 tap homebrew/core
+brew ansible
+brew apr
+brew apr-util
+brew argon2
+brew aspell
 brew autoconf
 brew bat
+brew brotli
+brew c-ares
 brew cmake
+brew curl-openssl
+brew freetds
+brew freetype
+brew gdbm
+brew gettext
+brew git-extras
+brew glib
+brew gmp
 brew hub
 brew icu4c
+brew jansson
+brew jemalloc
+brew jpeg
+brew libev
 brew libevent
+brew libffi
+brew libpng
+brew libpq
+brew libsodium
+brew libtool
+brew libyaml
+brew libzip
 brew mas
 brew mysql
 brew ncurses
+brew nghttp2
+brew nginx
 brew node
 brew nvm
+brew opencc
+brew openldap
 brew openssl
 brew pcre
+brew pcre2
+brew php
 brew pick
 brew pkg-config
+brew python
 brew rbenv
 brew rbenv-gemset
 brew readline
 brew ruby-build
+brew sqlite
 brew the_silver_searcher
+brew tidy-html5
 brew tig
 brew tmux
+brew tree
+brew unixodbc
+brew webp
 brew xz
 brew yarn
 brew zsh
@@ -32,9 +70,17 @@ tap homebrew/cask-fonts
 cask font-sourcecodepro-nerd-font
 
 tap homebrew/cask
+cask dotnet-sdk
+cask virtualbox
 
 tap rcmdnk/file
 brew brew-file
+
+# Other Homebrew packages
+brew az
+
+# Other Cask applications
+cask vagrant
 
 # App Store applications
 appstore 1333542190 1Password 7 (7.2.2)
