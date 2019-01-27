@@ -15,6 +15,7 @@ brew cmake
 brew curl-openssl
 brew freetds
 brew freetype
+brew fzf
 brew gdbm
 brew gettext
 brew git-extras
