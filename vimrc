@@ -37,7 +37,7 @@ Plugin 'Townk/vim-autoclose'
 " Vim SearchFile
 Plugin 'ctrlpvim/ctrlp.vim'
 " Vim autocomplete
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 " Git
 Plugin 'tpope/vim-fugitive'
