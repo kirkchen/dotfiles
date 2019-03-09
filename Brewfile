@@ -8,6 +8,7 @@ brew apr-util
 brew argon2
 brew aspell
 brew autoconf
+brew awscli
 brew bat
 brew brotli
 brew c-ares
@@ -54,8 +55,11 @@ brew python
 brew rbenv
 brew rbenv-gemset
 brew readline
+brew redis
 brew ruby-build
 brew sqlite
+brew terraform
+brew terragrunt
 brew the_silver_searcher
 brew tidy-html5
 brew tig
@@ -72,7 +76,8 @@ cask font-sourcecodepro-nerd-font
 
 tap homebrew/cask
 cask dotnet-sdk
-cask vagrant
+cask hammerspoon
+cask virtualbox
 
 tap puma/puma
 brew puma-dev
@@ -84,8 +89,8 @@ brew brew-file
 brew az
 
 # Other Cask applications
-cask hammerspoon
-cask virtualbox
+cask google-cloud-sdk
+cask vagrant
 
 # App Store applications
 appstore 1333542190 1Password 7 (7.2.2)

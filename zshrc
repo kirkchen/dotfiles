@@ -173,3 +173,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # added by travis gem
 [ -f /Users/kirkchen/.travis/travis.sh ] && source /Users/kirkchen/.travis/travis.sh
+
+# Google cloud sdk
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
