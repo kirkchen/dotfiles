@@ -26,3 +26,6 @@ bind main    G      move-last-line
 bind main    <Esc>g :toggle commit-title-graph
 
 bind generic +      !git commit --amend --allow-empty
+
+bind generic L      !sh -c "git reflog --pretty=raw | tig --pretty=raw"
+bind generic _      ?git reset --hard HEAD@{"%(prompt Enter HEAD@{} number: )"}
