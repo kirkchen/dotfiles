@@ -19,6 +19,7 @@ brew freetype
 brew fzf
 brew gdbm
 brew gettext
+brew git
 brew git-extras
 brew glib
 brew gmp
