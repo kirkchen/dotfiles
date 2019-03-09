@@ -11,7 +11,6 @@ set ignore-space = at-eol
 set ignore-case = true
 set split-view-height = 80%
 set diff-options = -m --first-parent
-set mouse = true
 set editor-line-number = yes
 set refresh-mode = auto
 
@@ -28,4 +27,9 @@ bind main    <Esc>g :toggle commit-title-graph
 bind generic +      !git commit --amend --allow-empty
 
 bind generic L      !sh -c "git reflog --pretty=raw | tig --pretty=raw"
-bind generic _      ?git reset --hard HEAD@{"%(prompt Enter HEAD@{} number: )"}
+
+bind generic `      @bash -c "echo -n '%(commit)' | pbcopy"
+bind stage   `      @bash -c "echo -n '%(file)' | pbcopy"
+bind status  `      @bash -c "echo -n '%(file)' | pbcopy"
+bind tree    `      @bash -c "echo -n '%(file)' | pbcopy"
+bind blob    `      @bash -c "echo -n '%(file)' | pbcopy"
