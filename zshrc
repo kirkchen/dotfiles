@@ -117,6 +117,7 @@ alias gmi="git merge \$(git branch | cut -c 3- | pick)"
 alias gmdb="f() { if [ -z \$1 ]; then echo 'Please assign branch namespace.'; else git branch | awk -F. '/'"\$1"'/{print}' | xargs -I {} git branch -D {}; fi }; f"
 alias gdt="git difftool"
 alias ,,="cd \$(git rev-parse --show-toplevel)"
+alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 
 fixup() {
   echo "Committing..."
