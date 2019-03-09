@@ -67,7 +67,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " show line number
-set number
+set number relativenumber
 
 " show syntax highlight
 syntax on
