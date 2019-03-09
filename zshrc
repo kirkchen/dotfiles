@@ -118,6 +118,20 @@ alias gmdb="f() { if [ -z \$1 ]; then echo 'Please assign branch namespace.'; el
 alias gdt="git difftool"
 alias ,,="cd \$(git rev-parse --show-toplevel)"
 
+fixup() {
+  echo "Committing..."
+  git commit -m "fixup! ${1}" --no-verify > /dev/null
+  echo "Attempting to stash working directory..."
+  stashResult=$(git stash)
+  echo "Rebasing on top of ${1}"
+  git rebase -i "${1}^" --autosquash
+  if [ "$stashResult" != "No local changes to save" ]
+    then
+      echo "Popping from stash"
+      git stash pop > /dev/null
+  fi
+}
+
 # Tools
 alias mux="tmuxinator"
 alias ctags="`brew --prefix`/bin/ctags"
