@@ -78,7 +78,7 @@ cask font-sourcecodepro-nerd-font
 tap homebrew/cask
 cask dotnet-sdk
 cask hammerspoon
-cask virtualbox
+cask vagrant
 
 tap puma/puma
 brew puma-dev
@@ -91,7 +91,8 @@ brew az
 
 # Other Cask applications
 cask google-cloud-sdk
-cask vagrant
+cask p4v
+cask virtualbox
 
 # App Store applications
 appstore 1333542190 1Password 7 (7.2.2)
