@@ -1,0 +1,12 @@
+set ignorecase
+set smartcase
+
+" Integrate with system clipboard
+set clipboard=unnamedplus,unnamed
+
+" Plugins
+set surround
+
+let mapleader = ','
+
+nmap <leader>di /})<CR>o<ESC>may?it(<CR>`ap?it(<CR>wwzz
