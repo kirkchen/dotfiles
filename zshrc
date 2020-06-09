@@ -155,6 +155,11 @@ alias ptt2="ssh bbsu@ptt2.cc"
 # Editor
 alias e="$EDITOR"
 
+# exa
+alias ls='exa'
+alias ll='exa -lbFa --git --sort=Name'
+alias lt='exa --tree --level=2'
+
 # Homebrew file wrap
 export HOMEBREW_BREWFILE=~/.vim/Brewfile
 if [ -f $(brew --prefix)/etc/brew-wrap ];then
