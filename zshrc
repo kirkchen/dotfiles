@@ -74,7 +74,7 @@ ZSH_THEME="bullet-train.zsh/bullet-train"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git ruby rails golang zsh-autosuggestions extract z alias-tips docker-compose kubectl)
+plugins=(git ruby zsh-autosuggestions extract z alias-tips docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,7 +83,8 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -191,16 +192,11 @@ eval "$(rbenv init -)"
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
+# Iterm
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# added by travis gem
-[ -f /Users/kirkchen/.travis/travis.sh ] && source /Users/kirkchen/.travis/travis.sh
-
-# Google cloud sdk
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-
-# Jetbrain
-export PATH=$HOME/.jetbrains:$PATH
+# Local config
+[[ -f "$HOME/.zshrc.local" ]] && source $HOME/.zshrc.local
