@@ -119,25 +119,6 @@ alias gmdb="f() { if [ -z \$1 ]; then echo 'Please assign branch namespace.'; el
 alias gdt="git difftool"
 alias ,,="cd \$(git rev-parse --show-toplevel)"
 
-fixup() {
-  if [[ $# = 0 ]]
-  then
-    echo "No argument supplied"
-  else
-    echo "Committing..."
-    git commit -m "fixup! ${1}" --no-verify > /dev/null
-    echo "Attempting to stash working directory..."
-    stashResult=$(git stash)
-    echo "Rebasing on top of ${1}"
-    git rebase -i "${1}^" --autosquash
-    if [ "$stashResult" != "No local changes to save" ]
-    then
-      echo "Popping from stash"
-      git stash pop > /dev/null
-    fi
-  fi
-}
-
 # Tools
 alias mux="tmuxinator"
 alias ctags="`brew --prefix`/bin/ctags"
@@ -161,12 +142,6 @@ alias ls='exa'
 alias ll='exa -lbFa --git --sort=Name'
 alias lt='exa --tree --level=2'
 
-# Homebrew file wrap
-export HOMEBREW_BREWFILE=~/.vim/Brewfile
-if [ -f $(brew --prefix)/etc/brew-wrap ];then
-  source $(brew --prefix)/etc/brew-wrap
-fi
-
 # Visual Studio Code
 function code {
     if [[ $# = 0 ]]
@@ -184,19 +159,43 @@ function now {
   echo $(date -u '+%Y%m%d%H%M%S')
 }
 
+# fixup: git auto rebase from specific commit
+function fixup {
+  if [[ $# = 0 ]]
+  then
+    echo "No argument supplied"
+  else
+    echo "Committing..."
+    git commit -m "fixup! ${1}" --no-verify > /dev/null
+    echo "Attempting to stash working directory..."
+    stashResult=$(git stash)
+    echo "Rebasing on top of ${1}"
+    git rebase -i "${1}^" --autosquash
+    if [ "$stashResult" != "No local changes to save" ]
+    then
+      echo "Popping from stash"
+      git stash pop > /dev/null
+    fi
+  fi
+}
+
+# Homebrew file wrap
+export HOMEBREW_BREWFILE=~/.vim/Brewfile
+[[ -f $(brew --prefix)/etc/brew-wrap ]] && source $(brew --prefix)/etc/brew-wrap
+
 # Rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # Nvm
 export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+[[ -f "/usr/local/opt/nvm/nvm.sh" ]] && source "/usr/local/opt/nvm/nvm.sh"
 
 # Iterm
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+[[ -f "${HOME}/.iterm2_shell_integration.zsh" ]] && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[[ -f "${HOME}/.fzf.zsh" ]] && source ${HOME}/.fzf.zsh
 
 # Local config
 [[ -f "$HOME/.zshrc.local" ]] && source $HOME/.zshrc.local
