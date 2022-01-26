@@ -5,11 +5,11 @@ export HOMEBREW_BREWFILE=~/.vim/Brewfile
 
 # Rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+[[ -d "$HOME/.rbenv" ]] && eval "$(rbenv init -)"
 
 # Nvm
 export NVM_DIR="$HOME/.nvm"
-[[ -f "/usr/local/opt/nvm/nvm.sh" ]] && source "/usr/local/opt/nvm/nvm.sh"
+[[ -f "/opt/homebrew/opt/nvm/nvm.sh" ]] && source "/opt/homebrew/opt/nvm/nvm.sh"
 
 # Iterm
 [[ -f "${HOME}/.iterm2_shell_integration.zsh" ]] && source "${HOME}/.iterm2_shell_integration.zsh"
