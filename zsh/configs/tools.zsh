@@ -16,3 +16,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # fzf
 [[ -f "${HOME}/.fzf.zsh" ]] && source ${HOME}/.fzf.zsh
+
+# Jetbrains
+[[ -d "$HOME/.jetbrains" ]] && export PATH="$HOME/.jetbrains:$PATH"
