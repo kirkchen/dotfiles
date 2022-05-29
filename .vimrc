@@ -21,7 +21,8 @@ Plugin 'vim-airline/vim-airline-themes'
 " Vim Easymotion
 Plugin 'Lokaltog/vim-easymotion'
 " Vim Search
-Plugin 'mileszs/ack.vim'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 " Vim comment
 Plugin 'scrooloose/nerdcommenter'
 " Vim multi selector
@@ -34,8 +35,6 @@ Plugin 'tpope/vim-surround'
 " Plugin 'wakatime/vim-wakatime'
 " Vim autoclose
 Plugin 'Townk/vim-autoclose'
-" Vim SearchFile
-Plugin 'ctrlpvim/ctrlp.vim'
 " Vim autocomplete
 " Plugin 'Valloric/YouCompleteMe'
 
@@ -50,17 +49,11 @@ Plugin 'airblade/vim-gitgutter'
 " Plugin 'fatih/vim-go'
 " Plugin 'majutsushi/tagbar'
 
-" Puppet
-" Plugin 'rodjek/vim-puppet'
-
 " Html
 Plugin 'mattn/emmet-vim'
 
 " Groovy
 Plugin 'vim-scripts/groovy.vim'
-
-" Javascript
-" Plugin 'kchmck/vim-coffee-script'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -112,57 +105,22 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='molokai'
 let g:airline#extensions#tabline#enabled = 1
 
-" Ack settings
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
+" fzf settings
+" - Popup window (center of the screen)
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8 } }
+nmap <C-p> :Files<CR>
+nmap <leader>b :Buffers<CR>
+nmap <leader>f :Ag<CR>
+
+" Easymotion
+let g:EasyMotion_do_mapping = 0
+map <leader>s <Plug>(easymotion-s2)
 
 " NERDTree settings
 nmap <F2> :NERDTreeToggle<CR>
 
 " NERDComment settings
 let g:NERDSpaceDelims=1
-
-" Tagbar settings
-"let g:tagbar_type_go = {
-"    \ 'ctagstype' : 'go',
-"    \ 'kinds'     : [
-"        \ 'p:package',
-"        \ 'i:imports:1',
-"        \ 'c:constants',
-"        \ 'v:variables',
-"        \ 't:types',
-"        \ 'n:interfaces',
-"        \ 'w:fields',
-"        \ 'e:embedded',
-"        \ 'm:methods',
-"        \ 'r:constructor',
-"        \ 'f:functions'
-"    \ ],
-"    \ 'sro' : '.',
-"    \ 'kind2scope' : {
-"        \ 't' : 'ctype',
-"        \ 'n' : 'ntype'
-"    \ },
-"    \ 'scope2kind' : {
-"        \ 'ctype' : 't',
-"        \ 'ntype' : 'n'
-"    \ },
-"    \ 'ctagsbin'  : 'gotags',
-"    \ 'ctagsargs' : '-sort -silent'
-"	\ }
-"nmap <F8> :TagbarToggle<CR>
-
-" Golang
-"au FileType go nmap <leader>r <Plug>(go-run)
-"au FileType go nmap <leader>b <Plug>(go-build)
-"au FileType go nmap <leader>t <Plug>(go-test)
-"au FileType go nmap <leader>c <Plug>(go-coverage)
-"au FileType go nmap <Leader>gd <Plug>(go-doc)
-"au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-"au FileType go nmap <Leader>e <Plug>(go-rename)
-
-"let g:go_fmt_command = "goimports"
 
 " Ruby
 "let g:tagbar_type_ruby = {
@@ -187,8 +145,8 @@ let g:NERDSpaceDelims=1
 "au BufNewFile,BufRead *.cap set filetype=ruby
 
 " Map jenkins file type
-au BufNewFile,BufRead Jenkinsfile set filetype=groovy
-au BufNewFile,BufRead JenkinsfileDeploy set filetype=groovy
+"au BufNewFile,BufRead Jenkinsfile set filetype=groovy
+"au BufNewFile,BufRead JenkinsfileDeploy set filetype=groovy
 
 " Remove trailing white spaces
 function StripTrailingWhitespace()
