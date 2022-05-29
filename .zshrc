@@ -1,6 +1,8 @@
-source ~/.vim/oh-my-zsh.zsh
+export DOTFILES_PATH=~/.dotfiles
 
-for config in ~/.vim/zsh/configs/*; do
+source "$DOTFILES_PATH/oh-my-zsh.zsh"
+
+for config in $DOTFILES_PATH/zsh/configs/*; do
   source $config
 done
 

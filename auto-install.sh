@@ -1,4 +1,4 @@
-VIMHOME=~/.vim
+VIMHOME="${DOTFILES_PATH:-~/.dotfiles}"
 
 warn() {
 	echo "$1" >&2
@@ -19,13 +19,13 @@ cd "$VIMHOME"
 git submodule update --init
 
 cd ..
-ln -s .vim/vimrc .vimrc
+ln -s $VIMHOME/vimrc .vimrc
 
 echo "install vim plugins"
 vim +PluginInstall +qall
 
-ln -s .vim/zshrc .zshrc
-ln -s .vim/tmux.conf .tmux.conf
+ln -s $VIMHOME/zshrc .zshrc
+ln -s $VIMHOME/tmux.conf .tmux.conf
 source .zshrc
 
 echo "kirkchen's vimrc is installed."
