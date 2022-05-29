@@ -1,8 +1,3 @@
-
-# Homebrew file wrap
-export HOMEBREW_BREWFILE=~/.vim/Brewfile
-[[ -f $(brew --prefix)/etc/brew-wrap ]] && source $(brew --prefix)/etc/brew-wrap
-
 # Rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 [[ -d "$HOME/.rbenv" ]] && eval "$(rbenv init -)"
