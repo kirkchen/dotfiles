@@ -12,7 +12,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Vim Color Schema
-Plugin 'flazz/vim-colorschemes'
+Plugin 'sainnhe/sonokai'
 " Vim File Explorer
 Plugin 'scrooloose/nerdtree'
 " Vim Status bar
@@ -83,7 +83,16 @@ set guitablabel=%t
 
 let mapleader = ','
 
-colorscheme molokai
+" Theme
+if has('termguicolors')
+  set termguicolors
+endif
+" The configuration options should be placed before `colorscheme sonokai`.
+let g:sonokai_style = 'maia'
+let g:sonokai_better_performance = 1
+colorscheme sonokai
+
+let g:airline_theme = 'sonokai'
 
 " Highlight trailing whitespaces
 highlight ExtraWhitespace ctermbg=red guibg=red
