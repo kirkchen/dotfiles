@@ -36,7 +36,13 @@ Plugin 'tpope/vim-surround'
 " Vim autoclose
 Plugin 'Townk/vim-autoclose'
 " Vim autocomplete
-" Plugin 'Valloric/YouCompleteMe'
+if has('nvim')
+  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plugin 'Shougo/deoplete.nvim'
+  Plugin 'roxma/nvim-yarp'
+  Plugin 'roxma/vim-hug-neovim-rpc'
+endif
 
 " Git
 Plugin 'tpope/vim-fugitive'
@@ -167,3 +173,7 @@ function StripTrailingWhitespace()
     normal `z
   endif
 endfunction
+
+" Auto complete
+let g:deoplete#enable_at_startup = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
