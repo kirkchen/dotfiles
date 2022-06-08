@@ -35,14 +35,17 @@ Plugin 'tpope/vim-surround'
 " Plugin 'wakatime/vim-wakatime'
 " Vim autoclose
 Plugin 'Townk/vim-autoclose'
-" Vim autocomplete
+
+" Autocomplete
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Git
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
 " Rails
-" Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
 
 " Golang
 " Plugin 'fatih/vim-go'
@@ -50,9 +53,16 @@ Plugin 'airblade/vim-gitgutter'
 
 " Html
 Plugin 'mattn/emmet-vim'
+Plugin 'othree/html5.vim'
+Plugin 'othree/yajs.vim'
+Plugin 'othree/es.next.syntax.vim'
+Plugin 'joukevandermaas/vim-ember-hbs'
 
-" Groovy
-Plugin 'vim-scripts/groovy.vim'
+" Linting
+Plugin 'dense-analysis/ale'
+
+" Testing
+Plugin 'vim-test/vim-test'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -155,6 +165,60 @@ let g:NERDSpaceDelims=1
 " Map jenkins file type
 "au BufNewFile,BufRead Jenkinsfile set filetype=groovy
 "au BufNewFile,BufRead JenkinsfileDeploy set filetype=groovy
+
+" Prettier
+let g:ale_linters = {
+\  'javascript': ['eslint'],
+\  'ruby': ['rubocop'],
+\}
+let g:ale_fixers = {
+\ 'javascript': ['prettier'],
+\ 'scss': ['prettier'],
+\ 'handlebars': ['prettier'],
+\ 'ruby': ['rubocop'],
+\}
+" Format on Save
+let g:ale_fix_on_save = 1
+let g:ale_ruby_rubocop_executable = 'bundle'
+
+" CoC
+let g:coc_global_extensions = [
+\ 'coc-tsserver',
+\ 'coc-prettier',
+\ 'coc-eslint',
+\ 'coc-solargraph',
+\ 'coc-html',
+\ 'coc-css',
+\ 'coc-json',
+\ 'coc-ember',
+\ 'coc-highlight',
+\]
+" Use tab for trigger completion with characters ahead and navigate.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ CheckBackspace() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Testing
+nmap <silent> <leader>tt :TestNearest<CR>
+nmap <silent> <leader>tT :TestFile<CR>
+nmap <silent> <leader>ta :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tg :TestVisit<CR>
 
 " Remove trailing white spaces
 function StripTrailingWhitespace()
