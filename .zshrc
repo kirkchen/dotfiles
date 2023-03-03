@@ -1,4 +1,4 @@
-[[ -z "$DOTFILES_PATH" ]] && export DOTFILES_PATH="$HOME/.dotfiles"
+[[ -z "$DOTFILES_PATH" ]] && export DOTFILES_PATH="${0:A:h}"
 
 source "$DOTFILES_PATH/oh-my-zsh.zsh"
 
