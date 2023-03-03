@@ -5,4 +5,4 @@ install() {
     export DOTFILES_PATH="$script_dir"
 }
 
-install
+# install
