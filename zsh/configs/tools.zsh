@@ -1,3 +1,6 @@
+# Homebrew
+[[ -f "/opt/homebrew/bin/brew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 [[ -d "$HOME/.rbenv" ]] && eval "$(rbenv init -)"

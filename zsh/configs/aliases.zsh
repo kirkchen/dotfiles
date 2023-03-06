@@ -11,7 +11,6 @@ alias ,,="cd \$(git rev-parse --show-toplevel)"
 
 # Tools
 alias mux="tmuxinator"
-alias ctags="`brew --prefix`/bin/ctags"
 alias t="tig"
 alias ts="tig status"
 alias cat='bat'
