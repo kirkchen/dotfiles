@@ -30,12 +30,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 " Vim surround
 Plug 'tpope/vim-surround'
-" Vim align
-" Plug 'junegunn/vim-easy-align'
-" Vim time
-" Plug 'wakatime/vim-wakatime'
-" Vim autoclose
-Plug 'Townk/vim-autoclose'
 
 " Autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -47,10 +41,6 @@ Plug 'airblade/vim-gitgutter'
 " Rails
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
-
-" Golang
-" Plug 'fatih/vim-go'
-" Plug 'majutsushi/tagbar'
 
 " Html
 Plug 'mattn/emmet-vim'
