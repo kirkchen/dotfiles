@@ -2,70 +2,71 @@
 set nocompatible
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=$DOTFILES_PATH/bundle/Vundle.vim
-call vundle#begin('$DOTFILES_PATH/bundle/')
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Automactic install Vim-plug
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Vim plugins (via Vim-plug)
+call plug#begin()
 
 " Vim Color Schema
-Plugin 'sainnhe/sonokai'
+Plug 'sainnhe/sonokai'
 " Vim File Explorer
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 " Vim Status bar
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " Vim Easymotion
-Plugin 'Lokaltog/vim-easymotion'
+Plug 'Lokaltog/vim-easymotion'
 " Vim Search
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 " Vim comment
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 " Vim multi selector
-Plugin 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 " Vim surround
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " Vim align
-" Plugin 'junegunn/vim-easy-align'
+" Plug 'junegunn/vim-easy-align'
 " Vim time
-" Plugin 'wakatime/vim-wakatime'
+" Plug 'wakatime/vim-wakatime'
 " Vim autoclose
-Plugin 'Townk/vim-autoclose'
+Plug 'Townk/vim-autoclose'
 
 " Autocomplete
-Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Git
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " Rails
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
 
 " Golang
-" Plugin 'fatih/vim-go'
-" Plugin 'majutsushi/tagbar'
+" Plug 'fatih/vim-go'
+" Plug 'majutsushi/tagbar'
 
 " Html
-Plugin 'mattn/emmet-vim'
-Plugin 'othree/html5.vim'
-Plugin 'othree/yajs.vim'
-Plugin 'othree/es.next.syntax.vim'
-Plugin 'joukevandermaas/vim-ember-hbs'
+Plug 'mattn/emmet-vim'
+Plug 'othree/html5.vim'
+Plug 'othree/yajs.vim'
+Plug 'othree/es.next.syntax.vim'
+Plug 'joukevandermaas/vim-ember-hbs'
 
 " Linting
-Plugin 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 
 " Testing
-Plugin 'vim-test/vim-test'
+Plug 'vim-test/vim-test'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()
 filetype plugin indent on    " required
 
 " show line number
