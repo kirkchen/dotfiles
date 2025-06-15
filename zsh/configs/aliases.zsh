@@ -27,6 +27,6 @@ alias ptt2="ssh bbsu@ptt2.cc"
 alias e="$EDITOR"
 
 # exa
-alias ls='exa'
-alias ll='exa -lbFa --git --sort=Name'
-alias lt='exa --tree --level=2'
+alias ls='eza'
+alias ll='eza -lbaF --git --sort=Name'
+alias lt='eza --tree --level=2'
